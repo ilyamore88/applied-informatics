@@ -70,6 +70,32 @@ namespace task1
 
                 Console.WriteLine();
             }
+
+            /*
+             * Matrix sum
+             */
+            int[,] matrixSum = new int[n, n];
+            for (int i = 0; i < n; i++)
+            {
+                for (int j = 0; j < n; j++)
+                {
+                    matrixSum[i, j] = matrix1[i, j] + matrix2[i, j];
+                }
+            }
+
+            /*
+             * Write matrix sum
+             */
+            Console.WriteLine("Matrix sum:");
+            for (int i = 0; i < n; i++)
+            {
+                for (int j = 0; j < n; j++)
+                {
+                    Console.Write(matrixSum[i, j].ToString() + '\t');
+                }
+
+                Console.WriteLine();
+            }
         }
     }
 }

@@ -16,9 +16,9 @@ namespace task1
              * Enter matrices
              */
             Console.WriteLine("Enter matrix #1:");
-            int[,] matrix1 = InputMatrix(n);
+            double[,] matrix1 = InputMatrix(n);
             Console.WriteLine("Enter matrix #2:");
-            int[,] matrix2 = InputMatrix(n);
+            double[,] matrix2 = InputMatrix(n);
 
             /*
              * Clear console
@@ -42,19 +42,25 @@ namespace task1
              */
             Console.WriteLine("Matrix sum:");
             PrintMatrix(SumMatrices(matrix1, matrix2));
+
+            /*
+             * Multiply matrices and print result
+             */
+            Console.WriteLine("Matrix multiply:");
+            PrintMatrix(MultiplyMatrices(matrix1, matrix2));
         }
 
         /*
          * Read elements from console and return matrix
          */
-        private static int[,] InputMatrix(int n)
+        private static double[,] InputMatrix(int n)
         {
-            int[,] matrix = new int[n, n];
+            double[,] matrix = new double[n, n];
             for (int i = 0; i < n; i++)
             {
                 for (int j = 0; j < n; j++)
                 {
-                    matrix[i, j] = Int32.Parse(Console.ReadLine());
+                    matrix[i, j] = Double.Parse(Console.ReadLine());
                 }
             }
 
@@ -64,7 +70,7 @@ namespace task1
         /*
          * Print matrix in console
          */
-        private static void PrintMatrix(int[,] matrix)
+        private static void PrintMatrix(double[,] matrix)
         {
             for (int i = 0; i < matrix.GetLength(0); i++)
             {
@@ -80,19 +86,51 @@ namespace task1
         /*
          * Sum two matrices and return result
          */
-        private static int[,] SumMatrices(int[,] matrix1, int[,] matrix2)
+        private static double[,] SumMatrices(double[,] matrix1, double[,] matrix2)
         {
             int matrixSize = matrix1.GetLength(0);
-            int[,] matrixSum = new int[matrixSize, matrixSize];
+            double[,] result = new double[matrixSize, matrixSize];
             for (int i = 0; i < matrixSize; i++)
             {
                 for (int j = 0; j < matrixSize; j++)
                 {
-                    matrixSum[i, j] = matrix1[i, j] + matrix2[i, j];
+                    result[i, j] = matrix1[i, j] + matrix2[i, j];
                 }
             }
 
-            return matrixSum;
+            return result;
+        }
+
+        /*
+         * Multiply two matrices and return result
+         */
+        private static double[,] MultiplyMatrices(double[,] matrix1, double[,] matrix2)
+        {
+            int n = matrix1.GetLength(0);
+            double[,] result = new double[n, n];
+            /*
+             * Row of first matrix
+             */
+            for (int k = 0; k < n; k++)
+            {
+                /*
+                 * Column of second matrix
+                 */
+                for (int i = 0; i < n; i++)
+                {
+                    double element = 0;
+                    /*
+                     * Column of first matrix and row of second matrix
+                     */
+                    for (int j = 0; j < n; j++)
+                    {
+                        element += matrix1[k, j] * matrix2[j, i];
+                    }
+
+                    result[k, i] = element;
+                }
+            }
+            return result;
         }
     }
 }

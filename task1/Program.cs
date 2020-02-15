@@ -15,7 +15,9 @@ namespace task1
             /*
              * Enter matrices
              */
+            Console.WriteLine("Enter matrix #1:");
             int[,] matrix1 = InputMatrix(n);
+            Console.WriteLine("Enter matrix #2:");
             int[,] matrix2 = InputMatrix(n);
 
             /*
@@ -68,7 +70,7 @@ namespace task1
             {
                 for (int j = 0; j < matrix.GetLength(1); j++)
                 {
-                    Console.Write(matrix[i, j].ToString() + '\t');
+                    Console.Write(matrix[i, j] + "\t");
                 }
 
                 Console.WriteLine();

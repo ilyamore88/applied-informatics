@@ -11,32 +11,12 @@ namespace task1
              */
             Console.Write("Enter n (size of matrix): ");
             int n = Int32.Parse(Console.ReadLine());
-            int[,] matrix1 = new int[n, n];
-            int[,] matrix2 = new int[n, n];
 
             /*
-             * Enter matrix #1
+             * Enter matrices
              */
-            Console.WriteLine("Enter matrix #1:");
-            for (int i = 0; i < n; i++)
-            {
-                for (int j = 0; j < n; j++)
-                {
-                    matrix1[i, j] = Int32.Parse(Console.ReadLine());
-                }
-            }
-
-            /*
-             * Enter matrix #2
-             */
-            Console.WriteLine("Enter matrix #2:");
-            for (int i = 0; i < n; i++)
-            {
-                for (int j = 0; j < n; j++)
-                {
-                    matrix2[i, j] = Int32.Parse(Console.ReadLine());
-                }
-            }
+            int[,] matrix1 = InputMatrix(n);
+            int[,] matrix2 = InputMatrix(n);
 
             /*
              * Clear console
@@ -60,6 +40,23 @@ namespace task1
              */
             Console.WriteLine("Matrix sum:");
             PrintMatrix(SumMatrices(matrix1, matrix2));
+        }
+
+        /*
+         * Read elements from console and return matrix
+         */
+        private static int[,] InputMatrix(int n)
+        {
+            int[,] matrix = new int[n, n];
+            for (int i = 0; i < n; i++)
+            {
+                for (int j = 0; j < n; j++)
+                {
+                    matrix[i, j] = Int32.Parse(Console.ReadLine());
+                }
+            }
+
+            return matrix;
         }
 
         /*

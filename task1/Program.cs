@@ -48,6 +48,14 @@ namespace task1
              */
             Console.WriteLine("Matrix multiply:");
             PrintMatrix(MultiplyMatrices(matrix1, matrix2));
+
+            /*
+             * Invert matrices and print them
+             */
+            Console.WriteLine("Inverse matrix #1:");
+            PrintMatrix(InverseMatrix(matrix1));
+            Console.WriteLine("Inverse matrix #2:");
+            PrintMatrix(InverseMatrix(matrix2));
         }
 
         /*
@@ -160,6 +168,53 @@ namespace task1
                 }
 
                 x++;
+            }
+
+            return result;
+        }
+
+        /*
+         * Return matrix determinant
+         */
+        private static double MatrixDeterminant(double[,] matrix)
+        {
+            double result = 0;
+            int n = matrix.GetLength(0);
+            if (n == 1) return matrix[0, 0];
+            if (n == 2) return matrix[0, 0] * matrix[1, 1] - matrix[0, 1] * matrix[1, 0];
+            for (int i = 0; i < matrix.GetLength(0); i++)
+            {
+                result += Math.Pow(-1, i + 2) * matrix[i, 0] * MatrixDeterminant(AlgebraicComplement(matrix, i, 0));
+            }
+
+            return result;
+        }
+
+        /*
+         * Return inverse matrix
+         */
+        private static double[,] InverseMatrix(double[,] matrix)
+        {
+            int n = matrix.GetLength(0);
+            double[,] result = new double[n, n];
+            double[,] transposedMatrix = new double[n, n];
+
+            for (int i = 0; i < n; i++)
+            {
+                for (int j = 0; j < n; j++)
+                {
+                    transposedMatrix[i, j] = matrix[j, i];
+                }
+            }
+
+            for (int i = 0; i < n; i++)
+            {
+                for (int j = 0; j < n; j++)
+                {
+                    result[i, j] = Math.Pow(-1, i + j + 2) *
+                                   MatrixDeterminant(AlgebraicComplement(transposedMatrix, i, j)) /
+                                   MatrixDeterminant(matrix);
+                }
             }
 
             return result;

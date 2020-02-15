@@ -9,7 +9,7 @@ namespace task1
             /*
              * Enter size of matrix
              */
-            Console.Write("Enter n(size of matrix): ");
+            Console.Write("Enter n (size of matrix): ");
             int n = Int32.Parse(Console.ReadLine());
             int[,] matrix1 = new int[n, n];
             int[,] matrix2 = new int[n, n];
@@ -56,33 +56,13 @@ namespace task1
             PrintMatrix(matrix2);
 
             /*
-             * Matrix sum
-             */
-            int[,] matrixSum = new int[n, n];
-            for (int i = 0; i < n; i++)
-            {
-                for (int j = 0; j < n; j++)
-                {
-                    matrixSum[i, j] = matrix1[i, j] + matrix2[i, j];
-                }
-            }
-
-            /*
-             * Write matrix sum
+             * Sum matrices and print result
              */
             Console.WriteLine("Matrix sum:");
-            for (int i = 0; i < n; i++)
-            {
-                for (int j = 0; j < n; j++)
-                {
-                    Console.Write(matrixSum[i, j].ToString() + '\t');
-                }
-
-                Console.WriteLine();
-            }
+            PrintMatrix(SumMatrices(matrix1, matrix2));
         }
 
-        /**
+        /*
          * Print matrix in console
          */
         private static void PrintMatrix(int[,] matrix)
@@ -96,6 +76,24 @@ namespace task1
 
                 Console.WriteLine();
             }
+        }
+
+        /*
+         * Sum two matrices and return result
+         */
+        private static int[,] SumMatrices(int[,] matrix1, int[,] matrix2)
+        {
+            int matrixSize = matrix1.GetLength(0);
+            int[,] matrixSum = new int[matrixSize, matrixSize];
+            for (int i = 0; i < matrixSize; i++)
+            {
+                for (int j = 0; j < matrixSize; j++)
+                {
+                    matrixSum[i, j] = matrix1[i, j] + matrix2[i, j];
+                }
+            }
+
+            return matrixSum;
         }
     }
 }

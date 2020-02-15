@@ -130,6 +130,38 @@ namespace task1
                     result[k, i] = element;
                 }
             }
+
+            return result;
+        }
+
+        /*
+         * Return algebraic complement for element at position [row, column]
+         */
+        private static double[,] AlgebraicComplement(double[,] matrix, int row, int column)
+        {
+            int n = matrix.GetLength(0);
+            int x = 0, y = 0;
+            double[,] result = new double[n - 1, n - 1];
+            for (int i = 0; i < n; i++)
+            {
+                /*
+                 * Skip element row
+                 */
+                if (i == row) continue;
+
+                for (int j = 0; j < n; j++)
+                {
+                    /*
+                     * Skip element column
+                     */
+                    if (j == column) continue;
+                    result[x, y] = matrix[i, j];
+                    y++;
+                }
+
+                x++;
+            }
+
             return result;
         }
     }

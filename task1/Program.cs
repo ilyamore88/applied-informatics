@@ -143,12 +143,12 @@ namespace task1
         }
 
         /*
-         * Return algebraic complement for element at position [row, column]
+         * Return minor for element at position [row, column]
          */
-        private static double[,] AlgebraicComplement(double[,] matrix, int row, int column)
+        private static double[,] MatrixMinor(double[,] matrix, int row, int column)
         {
             int n = matrix.GetLength(0);
-            int x = 0, y = 0;
+            int x = 0;
             double[,] result = new double[n - 1, n - 1];
             for (int i = 0; i < n; i++)
             {
@@ -156,7 +156,7 @@ namespace task1
                  * Skip element row
                  */
                 if (i == row) continue;
-
+                int y = 0;
                 for (int j = 0; j < n; j++)
                 {
                     /*
@@ -182,9 +182,9 @@ namespace task1
             int n = matrix.GetLength(0);
             if (n == 1) return matrix[0, 0];
             if (n == 2) return matrix[0, 0] * matrix[1, 1] - matrix[0, 1] * matrix[1, 0];
-            for (int i = 0; i < matrix.GetLength(0); i++)
+            for (int i = 0; i < n; i++)
             {
-                result += Math.Pow(-1, i + 2) * matrix[i, 0] * MatrixDeterminant(AlgebraicComplement(matrix, i, 0));
+                result += Math.Pow(-1, i + 2) * matrix[i, 0] * MatrixDeterminant(MatrixMinor(matrix, i, 0));
             }
 
             return result;
@@ -212,7 +212,7 @@ namespace task1
                 for (int j = 0; j < n; j++)
                 {
                     result[i, j] = Math.Pow(-1, i + j + 2) *
-                                   MatrixDeterminant(AlgebraicComplement(transposedMatrix, i, j)) /
+                                   MatrixDeterminant(MatrixMinor(transposedMatrix, i, j)) /
                                    MatrixDeterminant(matrix);
                 }
             }

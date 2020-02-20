@@ -8,6 +8,7 @@ namespace task2
         {
             Matrix matrix = new Matrix();
             Console.WriteLine(matrix);
+            Console.WriteLine(matrix.InverseMatrix());
         }
     }
 }

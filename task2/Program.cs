@@ -6,7 +6,8 @@ namespace task2
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Matrix matrix = new Matrix();
+            Console.WriteLine(matrix);
         }
     }
 }

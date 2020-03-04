@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 
@@ -11,7 +12,7 @@ namespace task3
      * Next you write your adjacency matrix
      * Attention! Your file should be near compiled program
      */
-    public class GraphByAdjacencyMatrix
+    public class GraphByAdjacencyMatrix : Graph
     {
         /*
          * Variable with read adjacency matrix
@@ -67,9 +68,26 @@ namespace task3
         /*
          * Return count of vortexes in graph
          */
-        private int VortexCount()
+        public override int VortexCount()
         {
             return adjacencyMatrix.GetLength(0);
+        }
+
+        /*
+         * Return array of vortex neighbours
+         */
+        public override int[] GetVortexNeighbours(int vortex)
+        {
+            List<int> result = new List<int>();
+            for (int i = 0; i < VortexCount(); i++)
+            {
+                if (adjacencyMatrix[vortex][i] != 0 && vortex != i)
+                {
+                    result.Add(i);
+                }
+            }
+
+            return result.ToArray();
         }
 
         /*

@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 
 namespace task3
 {
@@ -16,12 +17,29 @@ namespace task3
         /*
          * Return array of vortexes in the bypass path
          */
-        public static Step[] BypassPath(Graph graph, int source, int destination)
+        public static int[] BypassPath(Graph graph, int source, int destination)
         {
             graphForSearch = graph;
             colors = new int[graph.VortexCount()];
             queue = new Queue<int>();
-            return Search(source, destination).ToArray();
+            Step[] result = Search(source, destination).ToArray();
+            Stack<int> shortestWay = new Stack<int>();
+            shortestWay.Push(result.Last().To);
+            Step currentStep = result.Last();
+            while (currentStep.From != source)
+            {
+                for (int i = 0; i < result.Length; i++)
+                {
+                    if (result[i].To == currentStep.From)
+                    {
+                        shortestWay.Push(result[i].To);
+                        currentStep = result[i];
+                        break;
+                    }
+                }
+            }
+            shortestWay.Push(currentStep.From);
+            return shortestWay.ToArray();
         }
 
         /*

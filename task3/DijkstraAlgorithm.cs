@@ -9,8 +9,14 @@ namespace task3
          */
         private static Graph graphForSearch;
 
+        /*
+         * Infromation about visited vortexes
+         */
         private static bool[] isVisited;
 
+        /*
+         * Information about distance to vortexes
+         */
         private static int[] distance;
 
         /*

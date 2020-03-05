@@ -10,7 +10,7 @@ namespace task3
         private static Graph graphForSearch;
 
         /*
-         * Infromation about visited vortexes
+         * Information about visited vortexes
          */
         private static bool[] isVisited;
 

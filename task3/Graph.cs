@@ -11,5 +11,10 @@
          * Return array of vortex neighbours
          */
         public abstract int[] GetVortexNeighbours(int vortex);
+
+        /*
+         * Return distance between two vortexes
+         */
+        public abstract int GetDistance(int vortex1, int vortex2);
     }
 }

@@ -109,5 +109,13 @@ namespace task3
 
             return result;
         }
+
+        /*
+         * Adjacency matrix does not support getting distance
+         */
+        public override int GetDistance(int vortex1, int vortex2)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

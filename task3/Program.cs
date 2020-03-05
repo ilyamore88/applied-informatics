@@ -59,6 +59,22 @@ namespace task3
             {
                 Console.WriteLine(string.Join(" -> ", breadthFirstSearch));
             }
+
+            /*
+             * Dijkstra algorithm
+             */
+            int startVortex = 0;
+            int[] distanceCost = DijkstraAlgorithm.BypassPath(graphByIncidenceMatrix, startVortex);
+            Console.WriteLine($"The cost of the path from vortex {startVortex} to the remaining vortexes");
+            for (int i = 1; i < distanceCost.Length; i++)
+            {
+                if (distanceCost[i] == Int32.MaxValue)
+                {
+                    Console.WriteLine($"Can't find way from {startVortex} to {i}");
+                    continue;
+                }
+                Console.WriteLine($"{startVortex} -> {i} = {distanceCost[i]}");
+            }
         }
     }
 }

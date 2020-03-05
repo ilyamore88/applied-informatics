@@ -5,6 +5,13 @@ using System.Linq;
 
 namespace task3
 {
+    /*
+     * Class represents graph that was created by incidence matrix
+     * Incidence matrix is reading from file
+     * At the first line in file you need to write count of vortexes and count of edges
+     * Next you write your incidence matrix
+     * Attention! Your file should be near compiled program
+     */
     public class GraphByIncidenceMatrix : Graph
     {
         /*
@@ -84,11 +91,11 @@ namespace task3
             List<int> result = new List<int>();
             for (int i = 0; i < EdgeCount(); i++)
             {
-                if (incidenceMatrix[vortex][i] == 1)
+                if (incidenceMatrix[vortex][i] > 0)
                 {
                     for (int j = 0; j < VortexCount(); j++)
                     {
-                        if (j != vortex && incidenceMatrix[j][i] == -1)
+                        if (j != vortex && incidenceMatrix[j][i] < 0)
                         {
                             result.Add(j);
                         }
@@ -117,6 +124,20 @@ namespace task3
             }
 
             return result;
+        }
+
+        public override int GetDistance(int vortex1, int vortex2)
+        {
+            for (int i = 0; i < EdgeCount(); i++)
+            {
+                if (incidenceMatrix[vortex1][i] != 0 && incidenceMatrix[vortex2][i] != 0 &&
+                    incidenceMatrix[vortex1][i] / incidenceMatrix[vortex2][i] == -1)
+                {
+                    return Math.Abs(incidenceMatrix[vortex1][i]);
+                }
+            }
+
+            return -1;
         }
     }
 }

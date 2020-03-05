@@ -126,6 +126,9 @@ namespace task3
             return result;
         }
 
+        /*
+         * Return distance from the first vortex to the second
+         */
         public override int GetDistance(int vortex1, int vortex2)
         {
             for (int i = 0; i < EdgeCount(); i++)

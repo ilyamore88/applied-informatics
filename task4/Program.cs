@@ -77,6 +77,11 @@ namespace task4
          */
         private static void PrintSolution(double[] resolve)
         {
+            if (resolve == null)
+            {
+                Console.WriteLine("The only solution to the system does not exist");
+                return;
+            }
             Console.Write("Solution: ");
             for (int i = 0; i < resolve.Length; i++)
             {

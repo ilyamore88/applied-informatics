@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\RiderProjects\\applied-informatics\\task4\\task4.csproj",
-      "projectName": "task4",
-      "projectPath": "D:\\RiderProjects\\applied-informatics\\task4\\task4.csproj",
+      "projectUniqueName": "D:\\RiderProjects\\applied-informatics\\task6\\task6.csproj",
+      "projectName": "task6",
+      "projectPath": "D:\\RiderProjects\\applied-informatics\\task6\\task6.csproj",
       "packagesPath": "C:\\Users\\Ilya Moroz\\.nuget\\packages\\",
-      "outputPath": "D:\\RiderProjects\\applied-informatics\\task4\\obj\\",
+      "outputPath": "D:\\RiderProjects\\applied-informatics\\task6\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Ilya Moroz\\AppData\\Roaming\\NuGet\\NuGet.Config"

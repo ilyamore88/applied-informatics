@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\RiderProjects\\applied-informatics\\task1\\task1.csproj": {}
+    "D:\\RiderProjects\\applied-informatics\\task6\\task6.csproj": {}
   },
   "projects": {
-    "D:\\RiderProjects\\applied-informatics\\task1\\task1.csproj": {
+    "D:\\RiderProjects\\applied-informatics\\task6\\task6.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\RiderProjects\\applied-informatics\\task1\\task1.csproj",
-        "projectName": "task1",
-        "projectPath": "D:\\RiderProjects\\applied-informatics\\task1\\task1.csproj",
+        "projectUniqueName": "D:\\RiderProjects\\applied-informatics\\task6\\task6.csproj",
+        "projectName": "task6",
+        "projectPath": "D:\\RiderProjects\\applied-informatics\\task6\\task6.csproj",
         "packagesPath": "C:\\Users\\Ilya Moroz\\.nuget\\packages\\",
-        "outputPath": "D:\\RiderProjects\\applied-informatics\\task1\\obj\\",
+        "outputPath": "D:\\RiderProjects\\applied-informatics\\task6\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Ilya Moroz\\AppData\\Roaming\\NuGet\\NuGet.Config"

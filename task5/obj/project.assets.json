@@ -8,7 +8,7 @@
     ".NETCoreApp,Version=v3.1": []
   },
   "packageFolders": {
-    "C:\\Users\\Илья Мороз\\.nuget\\packages\\": {}
+    "C:\\Users\\Ilya Moroz\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
@@ -16,11 +16,11 @@
       "projectUniqueName": "D:\\RiderProjects\\applied-informatics\\task5\\task5.csproj",
       "projectName": "task5",
       "projectPath": "D:\\RiderProjects\\applied-informatics\\task5\\task5.csproj",
-      "packagesPath": "C:\\Users\\Илья Мороз\\.nuget\\packages\\",
+      "packagesPath": "C:\\Users\\Ilya Moroz\\.nuget\\packages\\",
       "outputPath": "D:\\RiderProjects\\applied-informatics\\task5\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Илья Мороз\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\Ilya Moroz\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp3.1"
@@ -56,7 +56,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Users\\Илья Мороз\\.dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Users\\Ilya Moroz\\.dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
       }
     }
   }

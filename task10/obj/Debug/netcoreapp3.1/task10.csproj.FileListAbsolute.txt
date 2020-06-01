@@ -1,0 +1,11 @@
+D:\RiderProjects\applied-informatics\task10\bin\Debug\netcoreapp3.1\task10.exe
+D:\RiderProjects\applied-informatics\task10\bin\Debug\netcoreapp3.1\task10.deps.json
+D:\RiderProjects\applied-informatics\task10\bin\Debug\netcoreapp3.1\task10.runtimeconfig.json
+D:\RiderProjects\applied-informatics\task10\bin\Debug\netcoreapp3.1\task10.runtimeconfig.dev.json
+D:\RiderProjects\applied-informatics\task10\bin\Debug\netcoreapp3.1\task10.dll
+D:\RiderProjects\applied-informatics\task10\bin\Debug\netcoreapp3.1\task10.pdb
+D:\RiderProjects\applied-informatics\task10\obj\Debug\netcoreapp3.1\task10.csprojAssemblyReference.cache
+D:\RiderProjects\applied-informatics\task10\obj\Debug\netcoreapp3.1\task10.AssemblyInfoInputs.cache
+D:\RiderProjects\applied-informatics\task10\obj\Debug\netcoreapp3.1\task10.AssemblyInfo.cs
+D:\RiderProjects\applied-informatics\task10\obj\Debug\netcoreapp3.1\task10.dll
+D:\RiderProjects\applied-informatics\task10\obj\Debug\netcoreapp3.1\task10.pdb
